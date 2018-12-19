@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
+  </mat-form-field>
+  <button
+  mat-raised-button
+  color="primary"
+  (click)="onAddPost()">Save Post</button>
+</mat-card>
+<p>{{ newPost }}</p>
+<!--
+| TEMPLATING BINDING -> Manipulate component & outputs, react to user events.
+  |-- STRING INTERPOLATION -> [ {{ property name }} ].
+  |-- EVENT BINDING -> [ (click)="method()" ] -> Click listener.
+  |-- PROPERTY BINDING -> [ [value]="propertyname" ].
+  |-- GETTING USER INPUT:
+    |-- TWO-WAY BINDING -> [ [(ngModel)]="property name" ] -> combines setting and reading of a value -> two directional flow.
+      |-- DIRECTIVE -> [ ngModel ] -> Instruction you place on html elemt.
+        |-- NGMODEL -> Directive that will listen to user input and emit that data and store new data.
+    |-- LOCAL REFERNCE -> [ #postInput ] -> Marker/varaible to html elemt -> reference to elemt which can be used inside template file.
+      |-- <textarea rows="6" [value]="newPost" #postInput></textarea>
+-->
