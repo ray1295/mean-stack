@@ -1,13 +1,31 @@
 <mat-card>
-  <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
-  </mat-form-field>
-  <button
-  mat-raised-button
-  color="primary"
-  (click)="onAddPost()">Save Post</button>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="title"
+        ngModel
+        required
+        #title="ngModel">
+        <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="6"
+        name="content"
+        ngModel
+        required
+        #content="ngModel"></textarea>
+        <mat-error *ngIf="content.invalid">Please enter post content.</mat-error>
+    </mat-form-field>
+    <button
+    mat-raised-button
+    color="primary"
+    type="submit">Save Post</button>
+  </form>
 </mat-card>
-<p>{{ newPost }}</p>
 <!--
 | TEMPLATING BINDING -> Manipulate component & outputs, react to user events.
   |-- STRING INTERPOLATION -> [ {{ property name }} ].
@@ -19,4 +37,15 @@
         |-- NGMODEL -> Directive that will listen to user input and emit that data and store new data.
     |-- LOCAL REFERNCE -> [ #postInput ] -> Marker/varaible to html elemt -> reference to elemt which can be used inside template file.
       |-- <textarea rows="6" [value]="newPost" #postInput></textarea>
+      |-- [ #postInput ]
+      |-- [ #postForm="ngForm" ]
+    |-- FORMS:
+      |-- TEMPLATE DRIVEN FORMS
+      |-- REACTIVE FORMS
+      |-- [ type="submit" ]
+      |-- [ (submit)="onAddPost()" ]
+      |-- MAT-ERROR:
+        |-- [ *ngIf="postForm.getControl('title').invalid" ]
+        |-- [ #title="ngModel" ] -> [ *ngIf="title.invalid" ]
+ ]
 -->
