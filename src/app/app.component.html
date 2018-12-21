@@ -2,17 +2,17 @@
 <main>
   <app-post-create></app-post-create>
   <app-post-list></app-post-list>
+  <app-config></app-config>
 </main>
 
 <!--
-| ANGULAR:
-  Angular thinks in components.
-  Angular is a browser tye framework.
-
+|-- ANGULAR:
+  |-- Angular thinks in components.
+  |-- Angular is a browser tye framework.
   |-- Index.html
-  |-- [ <app-root> ] -> Loaded in index.html file - selector.
-  |-- SCRIPTS IMPORT -> Injected.
-  |-- Module.ts -> Defines feature & building block of application.
+    |-- [ <app-root> ] -> Loaded in index.html file - selector.
+    |-- SCRIPTS IMPORT -> Injected.
+  |-- MODULE -> [ Module.ts ] -> Defines feature & building block of application.
     |-- Application can be split into modules.
     |-- DECLARATIONS -> [  ] -> Registering component with angular - making angular aware of component.
     |-- BOOTSTRAP -> [  ] -> Root component.
@@ -35,4 +35,9 @@
     |-- [POSTS]="STOREDPOSTS" -> passing down storedpost list to app-post-list.
   |-- MODELS -> Blueprints defining how a content appears.
     |-- INTERFACE -> Simialar to Class -> Defines how an Object appears -> But can't be instantiated.
+
+|-- HTTP CLIENT:
+  |-- Most front-end applications communicate with backend services over the HTTP protocol.
+  |-- Applications often request JSON data from the server.
+    |--  App might need a configuration file on the server [ config.json ] that specifies resource URLs.
 -->

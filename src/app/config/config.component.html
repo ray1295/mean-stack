@@ -1,0 +1,19 @@
+<div>
+  <button (click)="showConfig()">Get</button>
+  <button (click)="showConfigResposne()">Show Resp</button>
+  <span *ngIf="config">
+    <p>Users API URL is "{{config.usersUrl}}"</p>
+    <p>Textfile URL is "{{config.textfile}}"</p>
+    <div *ngIf="headers">
+      Response headers:
+      <ul>
+        <li *ngFor="let header of headers">{{ header }}</li>
+      </ul>
+    </div>
+  </span>
+</div>
+
+<!--
+EVENT BINDING -> [  (click)="" ] -> Responding to DOM events-(click, mouseover, etc)
+STRUCTRAL DIRECTIVE -> [ *ngIf ] -> Toggle content based on a conditional.
+-->
