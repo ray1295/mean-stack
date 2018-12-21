@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IPost } from './posts/post.model';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +6,7 @@ import { IPost } from './posts/post.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  storedPosts: IPost[] = [];
-  onPostAdded(post: any) {
-    this.storedPosts.push(post);
-  }
+
 }
 
 /*

@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main>
-  <app-post-create (postCreated)="onPostAdded($event)"></app-post-create>
-  <app-post-list [posts]="storedPosts"></app-post-list>
+  <app-post-create></app-post-create>
+  <app-post-list></app-post-list>
 </main>
 
 <!--
@@ -10,19 +10,19 @@
   Angular is a browser tye framework.
 
   |-- Index.html
-  |-- <app-root> -> Loaded in index.html file - selector.
-  |-- Script imports -> Injected.
+  |-- [ <app-root> ] -> Loaded in index.html file - selector.
+  |-- SCRIPTS IMPORT -> Injected.
   |-- Module.ts -> Defines feature & building block of application.
     |-- Application can be split into modules.
-    |-- Declaration -> Registering component with angular - making angular aware of component.
-    |-- Bootstrap -> Root component.
+    |-- DECLARATIONS -> [  ] -> Registering component with angular - making angular aware of component.
+    |-- BOOTSTRAP -> [  ] -> Root component.
       |-- All other components are nested inside the root component.
-    |-- import -> Imports modules need for application.
+    |-- IMPORTS -> Imports modules need for application.
   |-- Main.ts -> Starts the Angular application - code in here executes first.
-  |-- Component -> Create a component by creating a new class.
-    |-- Class -> [Typescript & latest Javascript features] - allows for creation of object blueprint.
-    |-- Decorator -> Turn class into a component angular understands by adding a decorator - @Component()
-  |-- Typescript ->
+  |-- COMPONENT -> Create a component by creating a new class.
+    |-- CLASS -> [Typescript & latest Javascript features] - allows for creation of object blueprint.
+    |-- DECORATOR -> [ @ ] -> Turn class into a component angular understands by adding a decorator - @Component()
+  |-- TYPESCRIPT ->
   |-- Outputting content:
     |-- STRING INTERPOLATION -> [ {{ property name }} ]
     |-- PROPERTY BINDING -> [ [property name] ]
@@ -30,8 +30,8 @@
     |-- TWO-WAY BINDING -> [ [(Directive)]="method()" ]
   |-- [ (postCreated)="onPostAdded($event)" ]:
     |-- (POSTCREATED) -> event binding -> listening to (postCreated) event.
-    |-- "ONPOSTADEED()" -> We're adding the post to storedPosts list.
-    |-- $EVENT -> Give access to data we emit.
+    |-- [ "OnPostAdded()" ] -> We're adding the post to storedPosts list.
+    |-- EVENT -> [ $event ] -> Give access to data we emit.
     |-- [POSTS]="STOREDPOSTS" -> passing down storedpost list to app-post-list.
   |-- MODELS -> Blueprints defining how a content appears.
     |-- INTERFACE -> Simialar to Class -> Defines how an Object appears -> But can't be instantiated.

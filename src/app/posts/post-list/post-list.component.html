@@ -6,10 +6,15 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <p>{{ post.content }}</p>
+    <mat-action-row>
+      <button mat-button color="primary">Added</button>
+      <button mat-button color="warn">Delete</button>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
 <p *ngIf="posts.length <= 0">No Posts added yet!</p>
 
 <!--
 EXPANSION PANELS -> [ multi="true" ] -> Open more than one expanison panel at a time.
+SERVICE -> Centralise tasks and provide easy access to data - Class which you INJECT into components.
 -->
