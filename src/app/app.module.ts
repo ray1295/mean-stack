@@ -16,7 +16,7 @@ import { ConfigComponent } from './config/config.component';
     PostCreateComponent,
     HeaderComponent,
     PostListComponent,
-    ConfigComponent
+    ConfigComponent,
   ],
   imports: [
     BrowserModule,

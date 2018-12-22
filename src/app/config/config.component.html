@@ -1,6 +1,8 @@
 <div>
-  <button (click)="showConfig()">Get</button>
-  <button (click)="showConfigResposne()">Show Resp</button>
+  <button (click)="clear(); showConfig()">Get</button>
+  <button (click)="clear(); showConfigResposne()">Show Resp</button>
+  <button (click)="clear()">clear</button>
+  <button (click)="clear(); makeError()">error</button>
   <span *ngIf="config">
     <p>Users API URL is "{{config.usersUrl}}"</p>
     <p>Textfile URL is "{{config.textfile}}"</p>
@@ -12,8 +14,10 @@
     </div>
   </span>
 </div>
+<p *ngIf="error">{{ error | json }}</p>
 
 <!--
 EVENT BINDING -> [  (click)="" ] -> Responding to DOM events-(click, mouseover, etc)
+  |-- [ (click)="method1(); method2()" ] -> Calling multiple events from an click event handler.
 STRUCTRAL DIRECTIVE -> [ *ngIf ] -> Toggle content based on a conditional.
 -->

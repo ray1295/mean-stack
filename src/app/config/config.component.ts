@@ -1,16 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../config.service';
 import { IConfig } from './config.model';
+
 @Component({
   selector: 'app-config',
   templateUrl: './config.component.html',
   styleUrls: ['./config.component.scss']
 })
+
 export class ConfigComponent implements OnInit {
+
   config: IConfig;
   error: any;
   headers: string[];
+
   constructor(public configService: ConfigService) { }
+
+  clear() {
+    this.config = undefined;
+    this.error = undefined;
+    this.headers = undefined;
+  }
+
   showConfig() {
     this.configService.getConfig()
       .subscribe(
@@ -18,6 +29,7 @@ export class ConfigComponent implements OnInit {
         error => this.error = error
       );
   }
+
   showConfigResposne() {
     this.configService.getConfigResponse()
       .subscribe(
@@ -28,9 +40,16 @@ export class ConfigComponent implements OnInit {
           this.config = { ...resp.body };
         });
   }
+
   ngOnInit() {
   }
 
+  makeError() {
+    this.configService.makeIntentionalError()
+      .subscribe(
+        null,
+        error => this.error = error);
+  }
 }
 /*
 ¬
@@ -39,6 +58,8 @@ export class ConfigComponent implements OnInit {
   OBSERVABLES ->
 ¬
   CALLBACKK ->
+¬
+  RXJS -> RxJS is a library for composing asynchronous and callback-based code in a functional, reactive style.
 ¬
   SUBSCRIBE -> [ .subscribe() ] -> Component subscribes to method's return value.
     |-- Subscribe callback requires bracket notation-[] to extract the data values.
